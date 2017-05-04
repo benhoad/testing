@@ -15,6 +15,10 @@
     Test Interval.
     </button>
 
+    <br/>
+    <br/>
+
+
     <button id="refreshtest">
     Test refresh
     </button>
@@ -44,8 +48,7 @@ return vars;
 }
 
 
-datadump.innerHTML = "Search String = " + getUrlVars().toString();
-
+datadump.innerHTML = "Search String = " + JSON.stringify(getUrlVars());
 
 
 timeouttest.addEventListener("click",function(e){
