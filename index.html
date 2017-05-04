@@ -1,0 +1,56 @@
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <button id="timeouttest">
+    Test SetTimeout.
+    </button>
+
+    <br/>
+    <br/>
+
+    <button id="intervaltest">
+    Test Interval.
+    </button>
+
+    <script>
+
+
+var timeouttest = document.getElementById('timeouttest');
+var intervaltest = document.getElementById('intervaltest');
+
+var counter = 0;
+
+var intervalTimer;
+
+
+
+timeouttest.addEventListener("click",function(e){
+	timeouttest.innerHTML = "running..."
+   setTimeout(function(){
+   	alert('done');
+    timeouttest.innerHTML = "Test SetTimeout. Complete"
+   },5000);
+},false);
+
+
+intervaltest.addEventListener("click", function(e){
+	if (counter == 0) {
+  	intervalTimer = setInterval(function(){
+		counter++;
+		intervaltest.innerHTML = "Test Interval. ("+ counter +")"
+}, 1000);
+  }else{
+  	counter = 0;
+    clearInterval(intervalTimer);
+    intervaltest.innerHTML = "Test Interval.";
+  }
+},false);
+
+
+    </script>
+  </body>
+
+</body>
